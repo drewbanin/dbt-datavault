@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_customers_unioned
+    description: "Combined Quickbooks customers from LLC and INC accounts"
+    columns:
+
+      - name: data_source
+        description: "The data source for the customer (Quickbooks INC vs. LLC)"
+
+      - name: id
+        description: "Unique ID for each customer"
+        tests:
+          - unique
+          - not_null
+
+      - name: name
+        description: "The name of the customer"
+
+      - name: created_at
+        description: "When the customer object was first created in Quickbooks"
